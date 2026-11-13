@@ -29,8 +29,8 @@ Write-Host "Google Offline"
         Write-Host "Offline"
         $failures++
         Write-Host "Totalt $failures feilmeldinger"
-                Add-Type -AssemblyName PresentationFramework
-            [System.Windows.MessageBox]::Show("Du er koblet fra internettet", "Internett", "Ok", "Warning") 
+            Add-Type -AssemblyName PresentationFramework
+            [System.Windows.MessageBox]::Show("Du er koblet fra internettet", "Internett", "Ok", "Error") 
             Write-Host "---------------------------"
     } #                                              Melding på popup       navn på window svar   bilde ikon
     if ($failures -eq 10) {
@@ -41,5 +41,5 @@ Write-Host "Google Offline"
             Write-Host "Starter $($aktivtkort.Name) på nytt."
         }
     }
-    Start-Sleep -Seconds $sekunder #3 sekund pause
+    Start-Sleep -Seconds $sekunder
 }
